@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - name: git-checkout
-      - uses: actions/checkout@v5
+        uses: actions/checkout@v5
 
       - name: pnpm-setup
-      - uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
@@ -32,7 +32,7 @@ jobs:
         run: pnpm exec outdated --global
 
       - name: Run Prettier
-      - run: pnpm exec prettify
+        run: pnpm exec prettify
 
       - name: Run tests
-      - run: pnpm exec test
+        run: pnpm exec test
