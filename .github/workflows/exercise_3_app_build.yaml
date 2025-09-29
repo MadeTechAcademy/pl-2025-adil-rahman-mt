@@ -34,10 +34,10 @@ jobs:
         run: pnpm install
 
       - name: Check for outdated packages
-        run: pnpm outdated_check
+        run: pnpm exec outdated_check
 
       - name: Run Prettier
         run: pnpm exec prettify
 
       - name: Run tests
-        run: pnpm exec test
+        run: pnpm test
