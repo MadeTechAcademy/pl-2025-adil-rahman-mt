@@ -34,7 +34,7 @@ jobs:
         run: pnpm install
 
       - name: Check for outdated packages
-        run: pnpm exec outdated --global
+        run: pnpm outdated --global
 
       - name: Run Prettier
         run: pnpm exec prettify
