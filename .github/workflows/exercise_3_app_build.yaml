@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # - name: Check for outdated packages
-      #   run: pnpm exec outdated_check
+      - name: Check for outdated packages
+        run: pnpm exec outdated_check || true
 
       - name: Run Prettier
         run: pnpm prettify
