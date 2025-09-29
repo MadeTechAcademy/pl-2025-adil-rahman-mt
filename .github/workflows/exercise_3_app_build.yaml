@@ -27,7 +27,7 @@ jobs:
       #   run: pnpm exec outdated_check
 
       - name: Run Prettier
-        run: pnpm exec prettify
+        run: pnpm prettify
 
       - name: Run tests
         run: pnpm test
