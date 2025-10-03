@@ -32,4 +32,7 @@ How would you temporarily suspend the pipeline so it didn't run on a push?
 For discussion: What else is missing from this pipeline? (no need to add it right now)
 
 ## Notes
-Add your thoughts and questions here
+
+I used a workflow template from GitHub which helped me with this exercise. However, the template contained a step to use `actions/setup-node@v4` with a specified Node version. Since we were using pnpm in our workflow, these steps seemed to clash and this caused my workflow to take significantly longer in the `install dependancies` step which resulted in this step taking approximately 90 seconds (compared to about 10 seconds for others).
+
+The discussion on whether the outdated_check step should cause the pipeline to pass or fail was interesting and I learnt that we could allow our pipeline to pass if a non-critical step fails. Since we weren't interested in updating our packages if we had any outdated packages, we allowed our pipeline to pass by using `pnpm exec outdated_check || true`. Another way to allow the pipeline to pass even if the outdated_check failed was by setting the `continue-on-error` setting to `true`.
