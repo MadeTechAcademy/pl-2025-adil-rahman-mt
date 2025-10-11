@@ -21,4 +21,4 @@ You might have already hit issues in previous exercises. If so, you will have al
    - clear down any resources you have deployed
 
 ## Notes
-Add your thoughts and questions here
+For exercise 1, the pipeline failed because there were multiple broken links in the website. It is a real problem as we ideally don't want broken links on a website. We discussed whether or not we want the pipeline to fail or pass if broken links exist. I initially thought it should pass but was later convinced that it should fail because if it doesn't fail, no one would be aware of the existing broken links.

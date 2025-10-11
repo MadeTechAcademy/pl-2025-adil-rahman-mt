@@ -9,4 +9,7 @@ Knowing what you already know about connecting to the aws sandbox and running co
 - run the aws command line command to retrieve a list of s3 buckets on the account
 
 ## Notes
-Add your thoughts and questions here
+
+AWS vault allows us to securely store and manage AWS credentials and use them to generate temporary credentials for AWS commands which reduces the risk of leaking credentials.
+
+To use AWS vault, we use `aws-vault exec <profile> -- <command>` e.g. `aws-vault exec mt-playground -- aws s3 ls` will list all AWS S3 buckets.

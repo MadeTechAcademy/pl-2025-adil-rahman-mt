@@ -23,6 +23,8 @@ Keep a note of the following to use later:
 - the role *arn* that the github/aws link can assume.
 
 ## Notes
-Add your thoughts and questions here
+It would have been helpful to create a bucket name that was more meaningful than what I had created (s3-bucket-123982497) or personalised to me.
 
+The key alias is of format `alias/{name}`. It is not the same as the alias name.
 
+It was helpful in later exercises for the owner variable to not have any uppercase letters. Although, the failing pipeline did have a very clear and helpful error message to indicate what the problem was.

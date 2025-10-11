@@ -1,0 +1,33 @@
+name: Build and test Node app
+
+on:
+  push:
+    branches: ["main"]
+
+defaults:
+  run:
+    working-directory: ./exercises/3-github-actions/app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v5
+
+      - name: pnpm-setup
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check for outdated packages
+        run: pnpm outdated_check || true
+
+      - name: Run Prettier
+        run: pnpm prettify
+
+      - name: Run tests
+        run: pnpm test
